@@ -1,0 +1,17 @@
+﻿@model WordViewModel
+
+
+@await Html.PartialAsync("_Navbar")
+<div class="container">
+    <form style="width: 20rem" asp-controller="Home" asp-action="AddWord">
+        <div class="form-group">
+            <label>İn Azerbaijan</label>
+            <input asp-for="Word.AzerbaijanMeaning" class="form-control" placeholder="Azerbaijan">
+        </div>
+        <div class="form-group">
+            <label>İn English</label>
+            <input asp-for="Word.EnglishMeaning" class="form-control" placeholder="English">
+        </div>
+        <button class="btn btn-success">Add</button>
+    </form>
+</div>

@@ -1,0 +1,29 @@
+﻿@model HomeIndexViewModel
+<header>
+    @await Html.PartialAsync("_Navbar", Model)
+</header>
+
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">In Azerbaijan</th>
+                <th scope="col">In English</th>
+                <th scope="col">Added Time</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var word in Model.Words)
+            {
+                <tr>
+                    <td>@word.AzerbaijanMeaning</td>
+                    <td>@word.EnglishMeaning</td>
+                    <td>@word.Time</td>
+                    <td><a href="/home/deleteword?wordId=@word.Id" class="btn btn-danger">Delete</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
