@@ -67,9 +67,8 @@ namespace Vocabulary.Controllers
             return View();
         }
 
-        public IActionResult DeleteWord()
+        public IActionResult DeleteWord(int id)
         {
-            int id = int.Parse(Request.Query["wordId"]);
             var word = _efWordDal.GetById(id);
             _efWordDal.Delete(word);
             return RedirectToAction("Index");
